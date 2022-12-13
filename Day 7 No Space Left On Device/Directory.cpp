@@ -6,6 +6,15 @@
 
 Directory::Directory(std::string dirName, Node* parent) : Node(parent, Node::DIRECTORY), directoryName(dirName) { }
 
+Directory::~Directory()
+{
+  NodeList::iterator itEnd = contents.end();
+  for (NodeList::iterator it = contents.begin(); it != itEnd; ++it)
+  {
+    delete (*it);
+  }
+}
+
 void Directory::addContent(Node* node)
 {
   // duplicates are checked by the file system, not the directory.

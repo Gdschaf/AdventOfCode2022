@@ -5,6 +5,11 @@
 #define ROOT_DIR "/"
 #define UP_LEVEL ".."
 
+FileSystem::~FileSystem()
+{
+  delete root;
+}
+
 void FileSystem::cd(std::string dirName)
 {
   if (root == nullptr)

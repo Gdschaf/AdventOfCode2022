@@ -15,14 +15,15 @@ class Directory : Node
 {
 public:
   Directory(std::string dirName, Node* parent);
+  ~Directory();
   void addContent(Node* node);
   Node* findDirectory(std::string dirName);
   Node* findFile(std::string fileName);
   long partOne();
   long partTwo(long clearSize);
   std::string getName() { return directoryName; }
-  long getSize() override;
-  std::string print() override;
+  long getSize();
+  std::string print();
 private:
   std::string directoryName;
   NodeList contents = NodeList();

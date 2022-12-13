@@ -13,6 +13,7 @@ public:
   };
 
   Node(Node * parent, Type type) : p(parent), nodeType(type) { }
+  virtual ~Node() { }
   bool isFile() { return nodeType == FILE; }
   bool isDirectory() { return nodeType == DIRECTORY; }
   Node* getParent() { return p; }

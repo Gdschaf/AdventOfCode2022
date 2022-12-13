@@ -6,6 +6,7 @@
 class FileSystem
 {
 public:
+  ~FileSystem();
   void cd(std::string dirName);
   void addDir(std::string dirName);
   void addFile(long fileSize, std::string fileName);
