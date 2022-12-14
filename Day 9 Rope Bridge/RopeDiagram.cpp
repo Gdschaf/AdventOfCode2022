@@ -13,7 +13,6 @@ RopeDiagram::RopeDiagram()
 
 void RopeDiagram::doMove(Move::Direction direction)
 {
-  Position oldPosition = snake[0];
   moveHead(direction);
   for (int i = 1; i < snake.size(); ++i)
   {
@@ -74,11 +73,6 @@ void RopeDiagram::addUnique(Position p)
 bool RopeDiagram::knotNeedsToFollow(Position head, Position tail)
 {
   return std::abs(head.first - tail.first) > 1 || std::abs(head.second - tail.second) > 1;
-}
-
-bool RopeDiagram::pullDiagonally(Position head, Position tail)
-{
-  return head.first != tail.first && head.second != tail.second;
 }
 
 Position RopeDiagram::closestMove(Position head, Position tail)

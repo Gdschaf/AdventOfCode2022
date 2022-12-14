@@ -17,10 +17,8 @@ public:
   std::vector<Position> getSnake() { return snake; }
 private:
   void moveHead(Move::Direction direction);
-  bool tailNeedsToMove();
   void addUnique(Position p);
   bool knotNeedsToFollow(Position head, Position tail);
-  bool pullDiagonally(Position head, Position tail);
   Position closestMove(Position head, Position tail);
 
   std::vector<Position> snake = std::vector<Position>();
